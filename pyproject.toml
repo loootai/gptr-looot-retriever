@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gptr-looot-retriever"
+version = "0.1.0"
+description = "GPT Researcher retriever plugin that searches the web through looot (Serper results, pay per call)."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "looot" }]
+# gpt-researcher 0.16.1 is the first PyPI release with entry-point retriever
+# plugins (PR #2154, merged 2026-09-26) and itself requires Python >=3.12.
+requires-python = ">=3.12"
+dependencies = [
+  "gpt-researcher>=0.16.1",
+  "requests>=2.31",
+]
+keywords = ["gpt-researcher", "retriever", "looot", "web-search", "ai-agents"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "responses>=0.25"]
+
+[project.urls]
+Homepage = "https://looot.ai"
+Documentation = "https://docs.looot.ai"
+Source = "https://github.com/loootai/gptr-looot-retriever"
+
+[project.entry-points."gpt_researcher.retrievers"]
+looot = "gptr_looot_retriever:LoootSearch"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: needs gpt-researcher installed"]
