@@ -1,4 +1,8 @@
+<p align="center"><img src="assets/hero.png" alt="gptr-looot-retriever: looot web search for GPT Researcher" width="100%"></p>
+
 # gptr-looot-retriever
+
+[![License](https://img.shields.io/github/license/loootai/gptr-looot-retriever)](LICENSE) [![Release](https://img.shields.io/github/v/release/loootai/gptr-looot-retriever)](https://github.com/loootai/gptr-looot-retriever/releases) [![Docs](https://img.shields.io/badge/docs-docs.looot.ai-12A06A)](https://docs.looot.ai)
 
 A [GPT Researcher](https://github.com/assafelovic/gpt-researcher) retriever plugin that runs web search through [looot](https://looot.ai). looot is a pay-per-call API gateway for data endpoints. This plugin calls its `serper-search` endpoint (Google results) and hands the links to GPT Researcher, which scrapes them.
 
