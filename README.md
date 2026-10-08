@@ -2,6 +2,15 @@
 
 A [GPT Researcher](https://github.com/assafelovic/gpt-researcher) retriever plugin that runs web search through [looot](https://looot.ai). looot is a pay-per-call API gateway for data endpoints. This plugin calls its `serper-search` endpoint (Google results) and hands the links to GPT Researcher, which scrapes them.
 
+## Install for agents
+
+```bash
+pip install git+https://github.com/loootai/gptr-looot-retriever
+claude mcp add --transport http looot https://api.looot.ai/mcp
+```
+
+See also: [awesome-looot-use-cases](https://github.com/loootai/awesome-looot-use-cases) (copy-paste recipes) and [awesome-gtm](https://github.com/loootai/awesome-gtm) (open-source GTM tools).
+
 It follows GPT Researcher's [retriever plugin contract](https://github.com/assafelovic/gpt-researcher/blob/master/docs/docs/gpt-researcher/search-engines/retriever-plugins.md): the package registers `looot` in the `gpt_researcher.retrievers` entry-point group, so no change to GPT Researcher is needed.
 
 ## Install
